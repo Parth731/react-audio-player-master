@@ -1,0 +1,102 @@
+:root {
+  --primary-color: rgb(24, 24, 24);
+  --primary-background-color: rgb(221, 221, 221);
+  --secondary-color: rgb(75, 75, 75);
+  --secondary-background-color: rgb(255, 255, 255);
+  --highlight-color: rgb(255, 85, 1);
+  --box-shadow-color: rgb(201, 201, 201);
+  --disabled-button-color: rgb(175, 175, 175);
+  --border-radius: 1rem;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Timecode */
+.timecode {
+  color: var(--secondary-color);
+}
+
+/* Volume */
+.volume {
+  display: flex;
+  align-items: center;
+}
+.volume-icon {
+  cursor: pointer;
+}
+.volume-slider {
+  margin: 0 1rem;
+  cursor: pointer;
+
+  width: 100%;
+  outline: none;
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+/* Custom volume slider */
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 1.5rem;
+  width: 1.5rem;
+  border: none;
+  border-radius: 50%;
+  background: var(--highlight-color);
+
+  margin-top: -0.6rem;
+}
+.volume-slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 1.5rem;
+  width: 1.5rem;
+  border: none;
+  border-radius: 50%;
+  background: var(--highlight-color);
+}
+.volume-slider::-ms-thumb {
+  -webkit-appearance: none;
+  height: 1.5rem;
+  width: 1.5rem;
+  border: none;
+  border-radius: 50%;
+  background: var(--highlight-color);
+}
+.volume-slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 0.25rem;
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius);
+}
+.volume-slider::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+
+  width: 100%;
+  height: 0.25rem;
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius);
+}
+
+/* Muted/disabled volume slider */
+.volume-slider[disabled] {
+  cursor: not-allowed;
+}
+.volume-slider[disabled]::-webkit-slider-thumb {
+  background-color: var(--disabled-button-color);
+}
+.volume-slider[disabled]::-moz-range-thumb {
+  background-color: var(--disabled-button-color);
+}
+.volume-slider[disabled]::-ms-thumb {
+  background-color: var(--disabled-button-color);
+}
+.volume-slider[disabled]::-webkit-slider-runnable-track {
+  background-color: var(--disabled-button-color);
+}
+.volume-slider[disabled]::-ms-track {
+  background-color: var(--disabled-button-color);
+}
